@@ -1,0 +1,1 @@
+This folder should be filled with .json files, which are the output of LLMs. For each LLM, the format is "{model_name}_{suffix}/{file_name}.json".

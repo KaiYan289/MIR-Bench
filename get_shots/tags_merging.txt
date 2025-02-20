@@ -1,0 +1,14 @@
+# This is the prompt for merging tags into different categories. We omit some problems in the middle.
+
+You are given a set of tags of some python function, which describes what the function does. After each tags, an example input and output is given. Functions are separated with '===='. Now you need to merge the tags into 30 different tags based on the functionality and input-output format of the problem (e.g. input is a list and output is an integer). Here are the questions:
+unique_permutations_calculation
+{'paren_string': '(()((())))()()()(())((()()(()()()(()))))'}
+[5]
+====
+... (omitted)
+====
+character_power_comparison
+{'un': 'wj84'}
+True
+====
+Please cluster them within 30 tags of the same format as given tags. For each tag, output examples applied to this tag and input-output format (e.g. input: list, output: float) for this tag.
