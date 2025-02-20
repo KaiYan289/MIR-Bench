@@ -76,15 +76,15 @@ There are also some auxiliary data given in the repo:
 
 **./get_prompts/main-freecotdirect/res:** The folder contains problem indices (as in construct_data_final.parquet) for MIR-Extended (with suffix "all") and MIR-Core (with suffix "quad"). All indices corresponds to the order in ./get_generator/construct_data_final.parquet.
 
-### Alternatives for LFS
+### &#x2757; Downloading large files
 
-Specially, here are the alternative links for files managed by git lfs in case the bandwidth quota is reached:
+Specially, some files are too large to be uploaded in github (and lfs can be costly). We currently use placeholders for these files. To download the actual file, please use the alternative links below, or download them on the huggingface dataset **kaiyan289/MIR-Bench**:
 
 **./get_generator/data/apps/train.jsonl:** https://uofi.box.com/s/7f3zd0cyva6aimraszs9p9kjme7c9816
 
 **./eval/raw_output/GPT4o-0806_lliwt2drxg676152ba/manyshot_benchmark#64acc_quad_512.json:** https://uofi.box.com/s/e5p6t8m0xfqxy6vs0b89u15qzftr1p88
 
-**./eval/data/dataset_whitebox.tar:** https://uofi.box.com/s/v1rf6rwdk7oldvwbawej92576udfznhg. The content are also in the huggingface dataset **kaiyan289/MIR-Bench**. **We recommend to download dataset from huggingface instead of using github lfs.**
+**./eval/data/dataset_whitebox.tar:** https://uofi.box.com/s/v1rf6rwdk7oldvwbawej92576udfznhg.
 
 
 ## &#x2699; Evaluation by Yourself
