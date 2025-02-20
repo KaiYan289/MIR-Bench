@@ -14,7 +14,7 @@ Based on MIR-Bench, we study many novel problems for inductive reasoning and man
 
 ## &#x1F947; Leaderboard
 
-Currently, we benchmark 15 cutting-edge LLMs. All measures are listed in exact match accuracy.
+Currently, we benchmark 15 cutting-edge LLMs. All measures are listed in exact match accuracy (0 to 100).
 
 ### MIR-Core
 
