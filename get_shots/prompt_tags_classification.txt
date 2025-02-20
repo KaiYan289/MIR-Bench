@@ -1,0 +1,44 @@
+# This is the prompt for applying tag labels back onto each problem. We omit some tags in the middle.
+
+You are a coding expert. Given a set of code and input-output examples of a function, you need to classify it to one of the 30 tags below. If you feel the tag cannot fit into any types, use 'Tag 0: Other'. Use this tag sparingly. 
+
+
+**Tag 1: String Manipulation - Case Transformation**
+
+- **Example 1:**
+  - Function: `minimum_resources_needed_for_majority`
+  - Input: `{'string': 'VZaCelJCjlsUfXQSSfqkwLBJF'}`
+  - Output: `vzAcELjcJLSuFxqssFQKWlbjf`
+  - **Input Type:** `{'string': str}`
+  - **Output Type:** `str`
+
+- **Example 2:**
+  - Function: `string_transformation_by_capitalization`
+  - Input: `{'s': 'kBcruMswvYw3l4bk8KaTwpeX8UWdtiAk', 'ch': 'k'}`
+  - Output: `BcruMswvYw3l4bk8KaTwpeX8UWdtiA`
+  - **Input Type:** `{'s': str, 'ch': str}`
+  - **Output Type:** `str`
+
+---
+
+... (omitted)
+
+---
+
+**Tag 30: Mathematical Computations - Calculations Based on Formulas**
+
+- **Example:**
+  - Function: `count_consecutive_characters`
+  - Input: `{'a': 69.49312313514012, 'b': 78.86133225366325, 'c': 123.22911995200226}`
+
+  - Output: `2537.48`
+
+  - **Input Type:** `{'a': float, 'b': float, 'c': float}`
+
+  - **Output Type:** `float`
+
+---
+
+You must end your answer with [[Result]]: {Tag x: xxx}, where the tag must strictly follow the cases and spelling of the existing tags, including 'Tag 0: Other' (again, use this sparingly).
+Here is the problem:
+

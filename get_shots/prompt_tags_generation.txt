@@ -1,0 +1,203 @@
+You are an expert in coding. You will now be given a function that solves some problems and some example input-output pairs.
+You need to briefly summarize what the function is about in a tag in high-level, with no more than 5 words connected with '_'. Try not focus on specific application (e.g. music_notation / zombie_shooting), but focus on the essence (e.g. string_pattern_recognition / application_calculation). DO NOT OUTPUT ANYTHING ELSE. Here are some examples:
+
+[[Code]]
+def truncate_number(number: float) -> float:
+    """ Given a positive floating point number, it can be decomposed into
+    and integer part (largest integer smaller than given number) and decimals
+    (leftover part always smaller than 1).
+
+    Return the decimal part of the number.
+    >>> truncate_number(3.5)
+    0.5
+    """
+
+    return number - int(number)
+
+[[Input-Output Pairs]]
+Input: {'number': 711.48}
+Output: 0.4800000000000182
+Input: {'number': 31.2431}
+Output: 0.24309999999999832
+Input: {'number': 264.6953718}
+Output: 0.6953717999999753
+Input: {'number': 467.8115}
+Output: 0.8115000000000236
+Input: {'number': 657.1695109}
+Output: 0.16951089999997748
+Input: {'number': 945.342214}
+Output: 0.3422140000000127
+Input: {'number': 887.26839}
+Output: 0.26838999999995394
+Input: {'number': 645.4}
+Output: 0.39999999999997726
+Input: {'number': 583.936}
+Output: 0.9360000000000355
+Input: {'number': 362.1231727}
+Output: 0.1231726999999978
+Input: {'number': 30.11618942}
+Output: 0.11618942000000132
+Input: {'number': 442.184}
+Output: 0.18400000000002592
+Input: {'number': 19.583155}
+Output: 0.5831550000000014
+Input: {'number': 892.45}
+Output: 0.4500000000000455
+Input: {'number': 894.1238324}
+Output: 0.12383239999996931
+Input: {'number': 530.35374}
+Output: 0.35374000000001615
+[[Answer]]
+find_decimals_of_number
+
+[[Code]]
+def next_smallest(lst):
+    """
+    You are given a list of integers.
+    Write a function next_smallest() that returns the 2nd smallest element of the list.
+    Return None if there is no such element.
+    
+    next_smallest([1, 2, 3, 4, 5]) == 2
+    next_smallest([5, 1, 4, 3, 2]) == 2
+    next_smallest([]) == None
+    next_smallest([1, 1]) == None
+    """
+
+
+    if len(lst) <= 1: return None
+    sorted_list = sorted(lst)
+    for x in sorted_list:
+        if x != sorted_list[0]:
+            return x 
+
+
+
+[[Input-Output Pairs]]
+Input: {'lst': [19, -41, -27, 43, -7, -6, -40, -79]}
+Output: -41
+Input: {'lst': [26, -10, -17, 11, -52, 90]}
+Output: -17
+Input: {'lst': [84, -95, -89, 60, -13, -80]}
+Output: -89
+Input: {'lst': [27, 50, 9, -31, -30]}
+Output: -30
+Input: {'lst': [-21, -50, -40, 84]}
+Output: -40
+Input: {'lst': [-33, 58, -13, 80, -30, 49, -63]}
+Output: -33
+Input: {'lst': [86, -64, -50, -56]}
+Output: -56
+Input: {'lst': [63, -49, 21, 68, -91]}
+Output: -49
+Input: {'lst': [-82, 47, -42, -100, -12, -83, 83, 72, -35]}
+Output: -83
+Input: {'lst': [-40, 59, 58, 29]}
+Output: 29
+Input: {'lst': [-48, 82, 6, -34, -98, 63]}
+Output: -48
+Input: {'lst': [-48, -75, -27, -38, 80, -61, 85, -41]}
+Output: -61
+Input: {'lst': [-80, 80, 60, 38, -60, -36]}
+Output: -60
+Input: {'lst': [-27, 54, -53, 40, 67, 86]}
+Output: -27
+Input: {'lst': [77, 13, -15, 14, 62]}
+Output: 13
+Input: {'lst': [-25, 78, 50, 55, 46, 30, 33]}
+Output: 30
+[[Answer]]
+find_element_in_list
+
+[[Code]]
+def solution(zombies, distance, ammo):
+    def zombie_shootout(zombies, distance, ammo, shot=0):
+        if not zombies:
+            return f'You shot all {shot} zombies.'
+        if distance <= 0:
+            return f'You shot {shot} zombies before being eaten: overwhelmed.'
+        if not ammo:
+            return f'You shot {shot} zombies before being eaten: ran out of ammo.'
+        return zombie_shootout(zombies - 1, distance - 0.5, ammo - 1, shot + 1)
+    
+    return zombie_shootout(zombies, distance, ammo)
+
+
+[[Input-Output Pairs]]
+Input: {'zombies': 86, 'distance': 26.4, 'ammo': 67}
+Output: You shot 53 zombies before being eaten: overwhelmed.
+Input: {'zombies': 37, 'distance': 5.0, 'ammo': 68}
+Output: You shot 10 zombies before being eaten: overwhelmed.
+Input: {'zombies': 11, 'distance': 38.9, 'ammo': 41}
+Output: You shot all 11 zombies.
+Input: {'zombies': 52, 'distance': 38.1, 'ammo': 70}
+Output: You shot all 52 zombies.
+Input: {'zombies': 49, 'distance': 32.0, 'ammo': 19}
+Output: You shot 19 zombies before being eaten: ran out of ammo.
+Input: {'zombies': 36, 'distance': 16.5, 'ammo': 56}
+Output: You shot 33 zombies before being eaten: overwhelmed.
+Input: {'zombies': 31, 'distance': 45.5, 'ammo': 43}
+Output: You shot all 31 zombies.
+Input: {'zombies': 11, 'distance': 35.7, 'ammo': 49}
+Output: You shot all 11 zombies.
+Input: {'zombies': 32, 'distance': 7.1, 'ammo': 35}
+Output: You shot 15 zombies before being eaten: overwhelmed.
+Input: {'zombies': 83, 'distance': 9.4, 'ammo': 82}
+Output: You shot 19 zombies before being eaten: overwhelmed.
+Input: {'zombies': 31, 'distance': 29.2, 'ammo': 2}
+Output: You shot 2 zombies before being eaten: ran out of ammo.
+Input: {'zombies': 22, 'distance': 12.6, 'ammo': 19}
+Output: You shot 19 zombies before being eaten: ran out of ammo.
+Input: {'zombies': 8, 'distance': 7.1, 'ammo': 59}
+Output: You shot all 8 zombies.
+Input: {'zombies': 34, 'distance': 25.0, 'ammo': 7}
+Output: You shot 7 zombies before being eaten: ran out of ammo.
+Input: {'zombies': 78, 'distance': 7.8, 'ammo': 96}
+Output: You shot 16 zombies before being eaten: overwhelmed.
+Input: {'zombies': 26, 'distance': 14.3, 'ammo': 36}
+Output: You shot all 26 zombies.
+[[Answer]]
+application_calculation
+
+[[Code]]
+def solution(notes):
+    return bool(notes) and any(
+        all((n + i) % 12 in {0, 2, 4, 5, 7, 9, 11} for n in notes)
+        for i in range(12)
+    )
+
+
+[[Input-Output Pairs]]
+Input: {'notes': [32, 15, 38, -21, 28, -16, -45, 8, -33, 34]}
+Output: False
+Input: {'notes': [-14, 32, 47, -13, -9, 44, 37, -27, 37, 7]}
+Output: False
+Input: {'notes': [-23, 12, -42]}
+Output: True
+Input: {'notes': [-46, -27, -48, -26, 7, 36, 6]}
+Output: False
+Input: {'notes': [13, 29]}
+Output: True
+Input: {'notes': [-26, 11, 40]}
+Output: True
+Input: {'notes': [-27, -34, -28, -31, 43]}
+Output: False
+Input: {'notes': [31, -28, -4, -46, -34, -20]}
+Output: False
+Input: {'notes': [31, -13, -42, 32, -47, -30, 22, 30, 25, 1]}
+Output: False
+Input: {'notes': [-15, 17, -9, -31, -35]}
+Output: False
+Input: {'notes': [-9, -10, -47, -17, -10]}
+Output: False
+Input: {'notes': [13, -24, 4, 13, -14, 46, 9, -42, 43]}
+Output: False
+Input: {'notes': [46, 6, -33, -20]}
+Output: True
+Input: {'notes': [-36, 42, 29, 20, -10, 47, -43]}
+Output: False
+Input: {'notes': [-29, 43]}
+Output: True
+Input: {'notes': [-28, 26, -23, 39, 43, -16, -11, 44]}
+Output: False
+[[Answer]]
+property_judgment_in_list_elements
