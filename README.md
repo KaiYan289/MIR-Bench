@@ -1,6 +1,8 @@
 # &#x1F54A; MIR-Bench: Benchmarking LLM's Long-Context Intelligence via Many-Shot In-Context Inductive Reasoning 
 
-This repository contains code of the work *MIR-Bench: Benchmarking LLM’s Long-Context Intelligence via Many-Shot In-Context Inductive Reasoning* (https://arxiv.org/abs/2502.09933). The dataset is also available at **kaiyan289/MIR-Bench** at huggingface.
+[[PDF]](https://arxiv.org/abs/2502.09933)  [[HuggingFace]](https://huggingface.co/datasets/kaiyan289/MIR-Bench)
+
+This repository contains code of the work *MIR-Bench: Benchmarking LLM’s Long-Context Intelligence via Many-Shot In-Context Inductive Reasoning*. The dataset is available at **kaiyan289/MIR-Bench** at huggingface.
 
 ## &#x2728; What is MIR-Bench?
 
@@ -13,7 +15,6 @@ Based on MIR-Bench, we study many novel problems for inductive reasoning and man
 ## &#x1F947; Leaderboard
 
 Currently, we benchmark 15 cutting-edge LLMs. All measures are listed in exact match accuracy.
-
 
 ### MIR-Core
 
@@ -91,8 +92,6 @@ Specially, some files are too large to be uploaded in github (and lfs can be cos
 
 To prevent possible data contamination from invalidating our benchmark, we only release part of our shots and final prompts (150 out of 300 for MIR-Core, and 400 out of 693 for MIR-Extended). we will refer to the released part as **white box** dataset, and the non-released part as **black box** dataset. We will provide detailed dataset files for the white box part; for the black box part, we will provide scripts for counting scores, functions we used and their difficulty level (without publishing shots, prompts or data generator that produces shots). 
 
-<!-- (Removed due to LFS space limit.) We provide an example at ./eval/evaluate.py; you need to download and extract from ./eval/data/dataset_whitebox.tar (which is on github lfs) first to run it. We also provide all responses in our experiment for MIR-Core and MIR-Extended at ./eval/data/whitebox/MIR-Core.tar and ./eval/raw_output/whitebox/MIR-Extended.tar (As they are very large, we split them into several parts; download them all and use "cat MIR_Core_a* > MIR_Core.tar" and "cat MIR_Extended_a* > MIR_Extended.tar" to recover). Each of them are seperated into three parts: less than 512-shot, 1024-shot and 2048-shot.-->
-
 ### &#x2B1C; Whitebox
 
 For whitebox part: all data can be accessed at both Huggingface (link to be announced!) and ./eval folder. The data are in .parquet format (recommend to handle with the pandas library), which contains the following columns:
@@ -117,7 +116,7 @@ You need to invoke your LLM and get output for every row with contents in 'promp
 
 ### &#x2B1B; Blackbox
 
-We will get blackbox test online soon. Stay tuned!
+We will get blackbox evaluation available soon. Stay tuned!
 
 ## &#182; Citation
 
