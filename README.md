@@ -4,7 +4,7 @@
 
 This repository contains code of the work *MIR-Bench: Benchmarking LLM’s Long-Context Intelligence via Many-Shot In-Context Inductive Reasoning*. The dataset is available at **kaiyan289/MIR-Bench** at huggingface.
 
-Update Feb. 27th 2025: We updated code_data.parquet, which provides ground truth code and data generator for each problem we published. Please see readme of our huggingface repo for details!
+Update Feb. 27th 2025: We updated ./eval/data/code_data.parquet, which provides ground truth code and data generator for each problem we published. Please see readme of our huggingface repo for details!
 
 ## &#x2728; What is MIR-Bench?
 
