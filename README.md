@@ -4,6 +4,8 @@
 
 This repository contains code of the work *MIR-Bench: Benchmarking LLM’s Long-Context Intelligence via Many-Shot In-Context Inductive Reasoning*. The dataset is available at **kaiyan289/MIR-Bench** at huggingface.
 
+Update Feb. 27th 2025: We updated code_data.parquet, which provides ground truth code and data generator for each problem we published. Please see readme of our huggingface repo for details!
+
 ## &#x2728; What is MIR-Bench?
 
 Our proposed benchmark, **M**any-shot **I**nductive **R**easoning Bench (MIR-Bench), is the first many-shot in-context inductive reasoning benchmark. The benchmark is proposed to fix both the problem of existing Inductive Reasoning (IR) benchmarks and many-shot benchmarks. The former only focus on few-shot (usually <10) setting and lack evaluation for aggregating many pieces of information from long contexts, and the latter which are mostly focused on classification only.
