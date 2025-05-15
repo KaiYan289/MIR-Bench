@@ -104,7 +104,7 @@ To prevent possible data contamination from invalidating our benchmark, we only 
 
 ### &#x2B1C; Whitebox
 
-For whitebox part: all data can be accessed at both Huggingface (link to be announced!) and ./eval folder. The data are in .parquet format (recommend to handle with the pandas library), which contains the following columns:
+For whitebox part: all data can be accessed at both Huggingface and ./eval folder. The data are in .parquet format (recommend to handle with the pandas library), which contains the following columns:
 
 **prompt:** the input for LLMs.
 
