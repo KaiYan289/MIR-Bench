@@ -126,7 +126,7 @@ You need to invoke your LLM and get output for every row with contents in 'promp
 
 ### &#x2B1B; Blackbox
 
-We will get blackbox evaluation available soon. Stay tuned!
+To prevent possible overfitting, we keep part of our data as blackbox. Please contact kaiyan3@illinois.edu for evaluation.
 
 ## &#182; Citation
 
