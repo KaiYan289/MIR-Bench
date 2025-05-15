@@ -1,31 +1,39 @@
-# &#x1F54A; MIR-Bench: Benchmarking LLM's Long-Context Intelligence via Many-Shot In-Context Inductive Reasoning 
+# &#x1F54A; MIR-Bench: Can Your LLM Recognize Complicated Patterns via Many-Shot In-Context Reasoning?
 
 [[PDF]](https://arxiv.org/abs/2502.09933)  [[HuggingFace]](https://huggingface.co/datasets/kaiyan289/MIR-Bench)
 
-This repository contains code of the work *MIR-Bench: Benchmarking LLM’s Long-Context Intelligence via Many-Shot In-Context Inductive Reasoning*. The dataset is available at **kaiyan289/MIR-Bench** at huggingface.
+This repository contains code of the work *MIR-Bench: Can Your LLM Recognize Complicated Patterns via Many-Shot In-Context Reasoning?* (old name: *MIR-Bench: Benchmarking LLM’s Long-Context Intelligence via Many-Shot In-Context Inductive Reasoning*). The dataset is available at **kaiyan289/MIR-Bench** at huggingface.
+
+**Update May 15th 2025:** Major update; we add several experiments and changed the paper title for better summary of our paper. We also test more cutting-edge LLMs.
 
 **Update Feb. 27th 2025:** We updated ./eval/data/code_data.parquet, which provides ground truth code and data generator for each problem we published. Please see readme of our huggingface repo for details!
 
 ## &#x2728; What is MIR-Bench?
 
-Our proposed benchmark, **M**any-shot **I**nductive **R**easoning Bench (MIR-Bench), is the first many-shot in-context inductive reasoning benchmark. The benchmark is proposed to fix both the problem of existing Inductive Reasoning (IR) benchmarks and many-shot benchmarks. The former only focus on few-shot (usually <10) setting and lack evaluation for aggregating many pieces of information from long contexts, and the latter which are mostly focused on classification only.
+Our proposed benchmark, **M**any-shot **I**n-Context **R**easoning Bench (MIR-Bench), is the first many-shot in-context pattern recognition (inductive/transductive) reasoning benchmark. The benchmark is proposed to fix both the problem of existing pattern recognition benchmarks and many-shot benchmarks. The former only focus on few-shot (usually <10) setting and lack evaluation for aggregating many pieces of information from long contexts, and the latter which are mostly focused on classification only.
 
-Based on MIR-Bench, we study many novel problems for inductive reasoning and many-shot ICL, including robustness against erroneous shots and the effect of Chain-of-Thought (CoT), and acquired many insightful findings. The following figure illustrates the pipeline of our work, where we ask LLM to induce output via input-output examples from underlying functions with diverse data format.
+Based on MIR-Bench, we study many novel problems for inductive/transductive reasoning and many-shot ICL, including the reason for many-shot performance saturation, inductive vs. transductive reasoning for LLMs, robustness against erroneous shots, coding-based inductive framework, the effect of Retrieval Augmented Generation (RAG), out-of-domain in-context inductive skill learning, etc., and acquired many insightful findings. The following figure illustrates the pipeline of our work, where we ask LLM to induce output via input-output examples from underlying functions with diverse data format.
 
 ![An illustration of our pipeline.](teaser.png)
 
 ## &#x1F947; Leaderboard
 
-Currently, we benchmark 15 cutting-edge LLMs. All measures are listed in exact match accuracy (0 to 100).
+Currently, we benchmark 21 cutting-edge LLMs. All measures are listed in exact match accuracy (0 to 100).
 
 ### MIR-Core
 
 Models | 4-Shot | 8-Shot | 16-Shot | 32-Shot | 64-Shot | 128-Shot | 256-Shot | 512-Shot | 1024-Shot | 2048-Shot | Average 
 --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---
+o1-1217 | 71.13 | 79 | 82.87 | 84.13 | 83.77 | 83 | 82.07 | 80.97 | 78.2 | 71.33 | 79.65
+Gemini-2.0 Pro 0325 | 62.57 | 69.93 | 74.23 | 75.13 | 76.53 | 75.93 | 77.53 | 75.16 | 71.86 | 66.23 | 72.51 
+o3-mini-high | 65.3 | 70.53 | 73 | 76.97 | 75.37 | 76.47 | 76.1 | 72.67 | 64.87 | 52.73 | 70.4 
+DeepSeek-R1 | 63.57 | 71.43 | 73.43 | 75.13 | 75.5 | 74.87 | 72.97 | 69.9 | 63.67 | 38.8 | 67.92
 o1-mini-0912 | 62.13 | 68.3 | 70.63 | 70.5 | 71.6 | 72.63 | 71 | 66.87 | 59.53 | 47.53 | 66.07
 o1-preview-0912 | 59.07 | 62.3 | 64.53 | 66.07 | 66.97 | 67.07 | 67.9 | 69.4 | 66.97 | 60 | 65.03
+GPT-4.5-Preview | 55.9 | 59.3 | 61.6 | 63.27 | 64.4 | 64.43 | 64.57 | 63.7 | 64.07 | 57.83 | 61.91
 Claude-3.5-Sonnet | 48.4 | 54.97 | 58.63 | 61.37 | 61.9 | 62.4 | 62.2 | 61.07 | 56.33 | 58.5 | 58.58
 GPT-4o-0806 | 42.97 | 48.97 | 51.87 | 54.37 | 56.77 | 56.67 | 56.7 | 56.23 | 55.23 | 50.56 | 53.03
+DeepSeek-v3-0324 | 41.03 | 49.4 | 52.13 | 55.63 | 57.63 | 58.13 | 57.43 | 58.3 | 53.9 | 32.63 | 51.62
 Gemini-1.5 Pro-002 | 42.03 | 46.9 | 50.2 | 52.4 | 55 | 55.13 | 55 | 54.8 | 53.13 | 48.87 | 51.35
 Gemini-1.5 Flash-002 | 41.1 | 45.1 | 48.23 | 50 | 51.4 | 52.8 | 51.7 | 51.7 | 51.63 | 47.63 | 49.13
 Gemini-2.0 Flash | 40.3 | 44.83 | 45.67 | 48.33 | 48.36 | 48.53 | 48.67 | 48.27 | 46.07 | 40.97 | 46.0
