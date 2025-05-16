@@ -4,7 +4,7 @@
 
 This repository contains code of the work *MIR-Bench: Can Your LLM Recognize Complicated Patterns via Many-Shot In-Context Reasoning?* (old name: *MIR-Bench: Benchmarking LLM’s Long-Context Intelligence via Many-Shot In-Context Inductive Reasoning*). The dataset is available at **kaiyan289/MIR-Bench** at huggingface.
 
-**Update May 15th 2025:** Major update; we add several experiments and changed the paper title for better summary of our paper. We also test more cutting-edge LLMs.
+**Update May 15th 2025:** Major update; we add several experiments to the paper, updated the leaderboard and changed the paper title for better summary of our paper.
 
 **Update Feb. 27th 2025:** We updated ./eval/data/code_data.parquet, which provides ground truth code and data generator for each problem we published. Please see readme of our huggingface repo for details!
 
